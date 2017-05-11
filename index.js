@@ -23,7 +23,7 @@ app.listen(port, function(){
   console.log(`Listening on port ${port}`);
 });
 // Endpoints
-
+// Need to use Promise as Javascript is async. It will move on to next step before you get the results back from database
 app.get('/api/products', function(req, res, next){
   productsCtrl.getAllProducts().then(function(response){
     if(response === 'Ah..oh..Got an Error') {
